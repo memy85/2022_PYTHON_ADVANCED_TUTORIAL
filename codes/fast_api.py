@@ -19,11 +19,11 @@ def return_txts():
     return {"this is my text":f"{my_text}"}
 
 @app.get('/weights/{any_string}')
-def print_string(any_string: str):
-    text = Path('/home/wonseok/2022_PYTHON_ADVANCED_TUTORIAL/data/my_text.txt')
-    with open(text, 'r') as f :
-        my_text = f.read()
-    return {"this is my text":f"{my_text + any_string}"}    # 이렇게하면 request를 input할 수 있다. 
+async def print_string(any_string: str):
+          text = Path('/home/wonseok/2022_PYTHON_ADVANCED_TUTORIAL/data/my_text.txt')
+          with open(text, 'r') as f :
+              my_text = f.read()
+          return {"this is my text":f"{my_text + any_string}"}    # 이렇게하면 request를 input할 수 있다. 
 
 
     
